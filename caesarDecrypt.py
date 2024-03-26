@@ -21,14 +21,19 @@ def decrypt_caesar_cipher(encrypted_string, offset):
 #    decrypted_message = decrypt_caesar_cipher(encrypted_string, offset)
 #    print(f"Decrypted message with offset {offset}:", decrypted_message)
 
-## Enter a single offset
-#encrypted_string = input("Encrypted String: ")
-#offset = input("Offset: ")
-#decrypted_message = decrypt_caesar_cipher(encrypted_string, int(offset))
-#print(decrypted_message)
+runType = input("Press 1 for all offsets, or 2 to specify an offset: ")
 
-## Loop through offsets 0-25
-encrypted_string = input("Encrypted String: ")
-for offset in range(26):
-    decrypted_message = decrypt_caesar_cipher(encrypted_string, offset)
-    print(f"Decrypted message with offset {offset}:", decrypted_message)
+if runType == "1":
+    ## Loop through offsets 0-25
+    encrypted_string = input("Encrypted String: ")
+    for offset in range(26):
+        decrypted_message = decrypt_caesar_cipher(encrypted_string, offset)
+        print(f"Decrypted message with offset {offset}:", decrypted_message)
+elif runType == "2":
+    ## Enter a single offset
+    encrypted_string = input("Encrypted String: ")
+    offset = input("Offset: ")
+    decrypted_message = decrypt_caesar_cipher(encrypted_string, int(offset))
+    print(decrypted_message)
+else:
+    print("Please select 1 or 2")
